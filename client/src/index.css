@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.logo {
+  font-size: 2rem;
+  font-family: cursive;
+  color: red;
+}
+.toggle_btn {
+  width: 40px;
+  height: 15px;
+  background-color: gray;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.toggle_btn.active {
+  background-color: skyblue;
+}
+.toggle_btn .toggle_circle {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid green;
+
+  transition: all 0.3s ease-in-out;
+}
+.toggle_btn.active .toggle_circle {
+  margin-left: 20px;
+}
+.todo {
+  border: 2px solid green;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+.todo hr {
+  margin: 1rem 0;
+}
+.todo .delete {
+  color: red;
+  cursor: pointer;
+  font-size: 1.2rem;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todo .delete:hover {
+  background-color: lightgray;
+}
+.todo .todo_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+  height: max-content;
+  /* border: 1px solid red; */
+}
+.todo_title {
+  font-size: 1.5rem;
+}
+.todo .check_description {
+  padding: 0.3rem 0.7rem;
+  border: none;
+  cursor: pointer;
+  background-color: green;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.todo .reminder_container {
+  display: flex;
+  /* border: 1px solid gray; */
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.description_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.description_container .description_content {
+  background-color: white;
+  width: 80%;
+  max-width: 600px;
+  height: 80%;
+  max-height: 600px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.description_content .close {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: 700;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.description_content .close:hover {
+  background-color: lightgray;
+}
+.description_content .close_section {
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.description_content .title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.description_content .description_text {
+  border: 1px solid red;
+  flex: 1;
+  padding: 0.5rem;
+  overflow-wrap: break-word;
+  margin-bottom: 1rem;
+}
+.form_container {
+  display: none;
+}
+.form_container.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+}
+
+.form_container .form_content {
+  background-color: white;
+  padding: 1rem;
+}
+
+.form_container .form_content form {
+  display: flex;
+  flex-direction: column;
+}
+.form_content h3 {
+  text-align: center;
+}
+.form_content .close_section {
+  text-align: right;
+}
+.form_content .close_section .close {
+  cursor: pointer;
+  color: red;
+  font-size: 1.5rem;
+}
+.form_container .form_content form > input,
+.form_container .form_content form textarea,
+.form_container .form_content form button,
+.form_container .form_content form .reminder {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  resize: none;
+  border: 1px solid gray;
+}
+.form_container .form_content form button {
+  cursor: pointer;
+}
+
+.form_container .form_content form .reminder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form_container .form_content form .reminder input {
+  cursor: pointer;
+}
+
+.main_header {
+  border-bottom: 5px solid green;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.main_header header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main_header nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+  transition: all 0.35s ease;
+}
+.main_header nav a.active,
+.main_header nav a:hover {
+  background-color: green;
+  color: white;
+}
+
+.main_header header > button {
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+.main_header header > button.open {
+  background-color: red;
+}
+
+.tasks {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tasks > h3 {
+  text-align: center;
+  width: max-content;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px dotted green;
+}
+.tasks_content {
+  width: 100%;
+}
